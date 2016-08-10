@@ -1,0 +1,10 @@
+-r requirements.txt
+
+testfixtures
+pytest
+tox
+coveralls
+flake8
+ptpdb
+ptpython
+setuptools
