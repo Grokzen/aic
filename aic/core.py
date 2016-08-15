@@ -2,6 +2,8 @@
 
 """ aic - core.py """
 
+from aic.exceptions import AicOutputException
+
 # python std lib
 import json
 import logging
@@ -18,7 +20,7 @@ class Core(object):
     def __init__(self, output_format=None, pretty_output=None):
         log.debug("Creating new core class")
 
-        # Allways default to yaml as output format
+        # Always default to yaml as output format
         self.output_format = output_format or 'yaml'
         # Only print pretty output if provided by user
         self.pretty_output = pretty_output or False
@@ -59,6 +61,8 @@ class Core(object):
                 print(json.dumps(self.data, indent=2))
             else:
                 print(self.data)
+        else:
+            raise AicOutputException("Unsupported output format")
 
     def run_list_command(self):
         """

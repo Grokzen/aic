@@ -11,7 +11,7 @@ with open('CHANGES') as f:
 setup(
     name="aic",
     version="1.0.0",
-    description='Python lib/cli for JSON/YAML schema validation',
+    description='Tool for asset inventory with plugin support',
     long_description=readme + '\n\n' + history,
     author="Johan Andersson",
     author_email="Grokzen@gmail.com",

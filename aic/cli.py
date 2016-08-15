@@ -31,7 +31,7 @@ Arguments:
   -v, --verbose                        Verbose terminal output (multiple -v increases verbosity)
 """
 
-    # Import pykwalify package
+    # Import aic package
     import aic
 
     args = docopt(__docopt__, version=aic.__version__)
