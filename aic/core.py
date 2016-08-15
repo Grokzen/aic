@@ -2,6 +2,8 @@
 
 """ aic - core.py """
 
+from aic.exceptions import AicOutputException
+
 # python std lib
 import json
 import logging
@@ -59,6 +61,8 @@ class Core(object):
                 print(json.dumps(self.data, indent=2))
             else:
                 print(self.data)
+        else:
+            raise AicOutputException("Unsupported output format")
 
     def run_list_command(self):
         """
