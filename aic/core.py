@@ -18,7 +18,7 @@ class Core(object):
     def __init__(self, output_format=None, pretty_output=None):
         log.debug("Creating new core class")
 
-        # Allways default to yaml as output format
+        # Always default to yaml as output format
         self.output_format = output_format or 'yaml'
         # Only print pretty output if provided by user
         self.pretty_output = pretty_output or False
