@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" pyKwalify - cli.py """
+""" aic - cli.py """
 
 # python std lib
 import logging

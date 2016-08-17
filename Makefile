@@ -24,7 +24,7 @@ cleancov:
 	-rm -rf htmlcov/
 
 cleanegg:
-	-rm -rf pykwalify.egg-info/
+	-rm -rf aic.egg-info/
 
 cleanpy:
 	-find . -type f -name "*~" -exec rm -f "{}" \;
@@ -38,7 +38,7 @@ cleanall: clean cleanegg cleanpy cleancov
 
 test:
 	coverage erase
-	coverage run --source pykwalify/ -m python py.test
+	coverage run --source aic/ -m python py.test
 
 sdist:
 	python setup.py sdist
