@@ -48,7 +48,7 @@ class Core(object):
     def run(self):
         self.data = {}
         for module in self.modules:
-            self.data[module.module_name()] = module.run()
+            self.data[module.module_name().lower()] = module.run()
 
     def print_data(self):
         log.debug("Dumping format: {0}".format(self.output_format))

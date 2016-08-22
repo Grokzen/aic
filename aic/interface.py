@@ -12,4 +12,7 @@ class AicModule(object):
         raise AicModuleException("Must be overridden in subclass")
 
     def module_name(self):
-        raise AicModuleException("Must be overridden in subclass")
+        """
+        Default to class name but can be overridden in subclass
+        """
+        return str(self.__class__.__name__)
