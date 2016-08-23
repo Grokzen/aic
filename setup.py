@@ -25,6 +25,9 @@ setup(
             'aic = aic.cli:cli_entrypoint',
         ],
     },
+    extras_require={
+        'salt': ["salt"],
+    },
     install_requires=[
         'docopt>=0.6.2',
         'pyyaml',
