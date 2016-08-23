@@ -9,6 +9,9 @@ import json
 import logging
 from pkg_resources import iter_entry_points
 
+# aic modules
+from aic.interfaces.saltstack import process_salt_interface
+
 # 3rd party imports
 import yaml
 
@@ -45,8 +48,12 @@ class Core(object):
 
         self.modules = available_modules
 
-    def run(self):
+    def run(self, run_saltstack_interface=False):
         self.data = {}
+
+        if run_saltstack_interface:
+            self.data = process_salt_interface()
+
         for module in self.modules:
             self.data[module.module_name().lower()] = module.run()
 

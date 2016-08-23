@@ -14,7 +14,7 @@ def parse_cli():
     """
     """
     __docopt__ = """
-Usage: aic collect [-m MODULE ...] [options]
+Usage: aic collect [-m MODULE ...] [--saltstack] [options]
        aic list [options]
 
 Arguments:
@@ -25,6 +25,7 @@ Arguments:
                                        One of 'debug', 'info', 'warning', 'error', 'critical', 'quiet'.
                                        [Default: warning]
   -m MODULE, --module MODULE           Run only these modules. Can be specefied multiple times.
+  --saltstack                          Run salt-stack grains system and include all data in output
   -h, --help                           Show this help message and exit
   -q, --quiet                          Suppress all terminal output
   --version                            Display the version number and exit
@@ -58,7 +59,7 @@ def run(cli_args):
     if cli_args['list']:
         c.run_list_command()
     elif cli_args['collect']:
-        c.run()
+        c.run(run_saltstack_interface=cli_args['--saltstack'])
         c.print_data()
     else:
         print("Unknown command...")
